@@ -1,0 +1,8 @@
+{
+  "rmse_minutes": 5.38,
+  "mae_minutes": 3.353,
+  "r2": 0.8026,
+  "n_estimators": 348,
+  "train_rows": 400000,
+  "test_rows": 100000
+}

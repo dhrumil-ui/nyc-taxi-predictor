@@ -1,0 +1,40 @@
+# Data files (too large for GitHub)
+data/
+*.parquet
+*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+venv/
+.venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb~
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Model artifacts — COMMIT THESE for deployment
+# models/              <-- intentionally NOT ignored
+# models/*.pkl         <-- commit so Streamlit Cloud can load them

@@ -1,0 +1,1 @@
+["distance_miles", "hour", "day_of_week", "month", "passenger_count", "pickup_zone", "dropoff_zone", "is_rush_hour", "is_weekend", "is_airport_trip", "is_night", "is_manhattan", "hour_sin", "hour_cos", "day_sin", "day_cos"]
