@@ -8,7 +8,7 @@
 [![XGBoost](https://img.shields.io/badge/XGBoost-2.1-orange.svg)](https://xgboost.readthedocs.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**[🚀 Live Demo →](https://your-app.streamlit.app)** | **[📖 Technical Blog Post →](https://medium.com/@yourhandle)**
+**[🚀 Live Demo →](https://nyc-smart-trip-planner.streamlit.app/)** |
 
 ---
 
@@ -59,66 +59,7 @@ nyc-taxi-predictor/
 
 ---
 
-## 🚀 Quick Start (Local)
 
-### 1. Clone the repo
-```bash
-git clone https://github.com/YOUR_USERNAME/nyc-taxi-predictor.git
-cd nyc-taxi-predictor
-```
-
-### 2. Set up virtual environment
-```bash
-python -m venv venv
-source venv/bin/activate      # Mac/Linux
-# venv\Scripts\activate       # Windows
-pip install -r requirements.txt
-```
-
-### 3. Train the model
-This downloads ~100MB of real NYC TLC data, cleans it, engineers features, and trains XGBoost:
-```bash
-python src/train.py
-```
-Expected output:
-```
-[1] Loading data...
-  ↓ Downloading yellow_tripdata_2024-01.parquet (~50MB)...
-  Total raw rows: 2,964,624
-
-[2] Cleaning data...
-  Clean rows: 2,701,443
-
-[3] Engineering features...
-
-[4] Training model...
-  [0]  test-rmse: 12.41
-  [50] test-rmse: 6.82
-  [100] test-rmse: 5.23
-  ...
-  📊 Test Metrics:
-     RMSE:  4.23 minutes
-     R²:    0.8712
-
-[5] Saving artifacts...
-  ✓ Model saved to models/taxi_model.pkl
-
-✅ Training complete!
-```
-
-### 4. Run the app
-```bash
-streamlit run app.py
-```
-Open [http://localhost:8501](http://localhost:8501)
-
-### 5. (Optional) Run the API
-```bash
-uvicorn src.api:app --reload
-```
-API docs at [http://localhost:8000/docs](http://localhost:8000/docs)
-
----
 
 ## 🧠 ML Pipeline Details
 
@@ -151,36 +92,6 @@ URL: `https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_YYYY-MM.pa
 
 ---
 
-## ☁️ Deployment
-
-### Option A — Streamlit Cloud (Free, Recommended)
-
-1. Push your code to GitHub (public repo)
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Click **"New app"** → Select your repo → Set main file: `app.py`
-4. Click **Deploy**
-
-> ⚠️ **Note on model file**: The trained `models/taxi_model.pkl` (~20MB) must be committed to GitHub for Streamlit Cloud to load it. After training locally, run:
-> ```bash
-> git add models/
-> git commit -m "Add trained model artifacts"
-> git push
-> ```
-
-### Option B — Render.com (Free, REST API + Web App)
-
-1. Create account at [render.com](https://render.com)
-2. New → **Web Service** → Connect GitHub repo
-3. Settings:
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `streamlit run app.py --server.port $PORT --server.address 0.0.0.0`
-4. Click **Create Web Service**
-
-### Option C — Docker (Any Cloud)
-```bash
-docker build -t nyc-taxi-predictor .
-docker run -p 8501:8501 nyc-taxi-predictor
-```
 
 ---
 
@@ -198,27 +109,6 @@ Tests cover:
 - Fallback prediction within realistic range
 - All borough combinations
 
----
-
-## 📊 EDA Notebook
-
-```bash
-jupyter lab notebooks/01_eda.ipynb
-```
-
-Covers: duration distribution, hourly traffic patterns, distance vs duration scatter, feature correlation matrix.
-
----
-
-## 🤝 Contributing
-
-1. Fork the repo
-2. Create branch: `git checkout -b feature/your-feature`
-3. Commit: `git commit -m "feat: add your feature"`
-4. Push: `git push origin feature/your-feature`
-5. Open a Pull Request
-
----
 
 ## 📄 Data License
 
@@ -226,13 +116,5 @@ NYC TLC Trip Record Data is published under the [NYC Open Data Terms of Use](htt
 
 ---
 
-## 👤 Author
 
-**Your Name**
-- GitHub: [@YOUR_USERNAME](https://github.com/YOUR_USERNAME)
-- LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-- HuggingFace: [huggingface.co/YOUR_USERNAME](https://huggingface.co/YOUR_USERNAME)
 
----
-
-## ⭐ If this helped your portfolio, leave a star!
