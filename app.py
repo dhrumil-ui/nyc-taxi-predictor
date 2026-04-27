@@ -21,7 +21,7 @@ import plotly.graph_objects as go
 
 # ─── Page Config ──────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="NYC Smart Trip Planner",
+    page_title="NYC Smart Trip-Planner",
     page_icon="🗽",
     layout="wide",
     initial_sidebar_state="collapsed",
